@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http'
 import { map } from 'rxjs/operators'
 import { Observable, of } from 'rxjs'
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class AuthService {
   url: string = "http://35.190.191.33:9001/schoolsystem/api/v1/oauth/"
 
   constructor(
-    private http: Http
+    private http: Http,
+    private router: Router
   ) { }
 
   createAuthorizationHeader(headers: Headers) {
